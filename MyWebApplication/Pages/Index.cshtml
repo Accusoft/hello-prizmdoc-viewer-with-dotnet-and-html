@@ -1,0 +1,108 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Hello PrizmDoc Viewer!";
+}
+
+@section Head
+{
+    <!-- Ensure the viewer works best across various browsers and devices -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- CSS required by the viewer -->
+    <link rel="stylesheet" href="~/viewer-assets/css/normalize.min.css">
+    <link rel="stylesheet" href="~/viewer-assets/css/viewer.css">
+
+    <!-- JS required by the viewer -->
+    <script src="~/viewer-assets/js/jquery-1.10.2.min.js"></script>
+    <script src="~/viewer-assets/js/jquery.hotkeys.min.js"></script>
+    <script src="~/viewer-assets/js/underscore.min.js"></script>
+    <!-- The viewercontrol.js file powers core viewing functionality (such as rednering pages).
+         It is proprietary and non-modifiable. It is delivered via the @@prizmdoc/viewer-core npm package.
+         For simplicity, we are acquiring it here via a popular npm CDN.
+         However, you could acquire this file yourself ahead of time (via npm or otherwise) and store it in your viewer-assets directory. -->
+    <script src="https://cdn.jsdelivr.net/npm/@@prizmdoc/viewer-core@1.0/viewercontrol.js"></script>
+    <script src="~/viewer-assets/js/viewer.js"></script>
+    <script src="~/viewer-assets/js/viewerCustomizations.js"></script>
+
+    <!-- Create the viewer inside of the "viewingContainer" div, and initialize it with the viewingSessionId  -->
+    <script type="text/javascript">
+      $(function() {
+        $('#viewerContainer').pccViewer({
+          documentID:       '@Model.ViewingSessionId',
+          imageHandlerUrl:  '/pas-proxy',        // Base path the viewer should use to make requests to PAS (PrizmDoc Application Services).
+          viewerAssetsPath: 'viewer-assets',     // Base path the viewer should use for static assets
+          resourcePath:     'viewer-assets/img', // Base path that viewer-core should use for images
+          language: viewerCustomizations.languages['en-US'],
+          template: viewerCustomizations.template,
+          icons:    viewerCustomizations.icons,
+          annotationsMode: "LayeredAnnotations"  // Use the new "LayeredAnnotations" system, which will persist annotation data as JSON (instead of the default "LegacyAnnotations" system, which uses a different XML format)
+        });
+      });
+    </script>
+}
+
+<h1>Hello PrizmDoc Viewer!</h1>
+
+<p>This is a minimal ASP.NET Core web application which loads a document in the browser with PrizmDoc Viewer, like this:</p>
+
+<!-- This div will become the viewer -->
+<div id="viewerContainer" style="width: 80%; height: 60%"></div>
+
+<h2>What Just Happened?</h2>
+
+<ol>
+    <li>
+    <p>This web application <code>POST</code>ed to PAS (PrizmDoc Application Services) to create a new viewing session:</p>
+    <p><img src="/images/viewing-sequence-diagrams/1-post-viewing-session.png" width="960" /></p>
+    </li>
+    <li>
+    <p>It received a <code>viewingSessionId</code> of <code style="font-weight: bold">"@Model.ViewingSessionId"</code>:</p>
+    <p><img src="/images/viewing-sequence-diagrams/2-receive-viewing-session-id.png" width="960" /></p>
+    </li>
+    <li>
+    <p>This web application immediately rendered the HTML for this page, including both the viewer and the new <code>viewingSessionId</code>. This allowed the browser to start parsing the viewer's HTML, CSS, and JavaScript right away:</p>
+    <p><img src="/images/viewing-sequence-diagrams/3-render-HTML.png" width="960" /></p>
+    </li>
+    <li>
+    <p>Then, this web application uploaded the source document to PAS, associating that document with the viewing session:</p>
+    <p><img src="/images/viewing-sequence-diagrams/4-upload-source-document.png" width="960" /></p>
+    </li>
+    <li>
+    <p> PAS handed this work off to the powerful PrizmDoc Server backend, which immediately began converting the document content to SVG, one page at a time:</p>
+    <p><img src="/images/viewing-sequence-diagrams/5-conversion-starts.png" width="960" /></p>
+    </li>
+    <li>
+    <p>Meanwhile, as soon as it had finished loading in the browser, the viewer began repeatedly asking PAS for the first page of document content:</p>
+    <p><img src="/images/viewing-sequence-diagrams/6-viewer-requests-first-page.png" width="960" /></p>
+    </li>
+    <li>
+    <p>As soon as the first page of SVG content was ready, PAS returned it to the viewer, allowing you to see the first page of the document:</p>
+    <p><img src="/images/viewing-sequence-diagrams/7-receive-first-page.png" width="960" /></p>
+    </li>
+    <li>
+    <p>As you navigate through the document, the viewer will continue to request page content as needed.</p>
+    <p><img src="/images/viewing-sequence-diagrams/8-viewer-requests.png" width="960" /></p>
+    </li>
+</ol>
+
+<h2>How Does the Viewer Reach PAS (PrizmDoc Application Services)?</h2>
+
+<p>
+    To get document content, the viewer makes requests to PAS <i>through your web application</i> (or web server).
+    That's why this web application defines a proxy route to PAS at <code>pas-proxy/</code> (see <code>Startup.cs</code>,
+    where we use <a href="https://www.nuget.org/packages/SharpReverseProxy/1.3.15">SharpReverseProxy</a>
+    in the <code>Configure</code> method to setup a <code>pas-proxy/</code> base route which proxies
+    requests to the actual PAS host).
+    If you look at the network traffic in dev tools, you'll see the requests made by the viewer for resources rooted at this path.
+</p>
+
+<h2>Where to Next?</h2>
+
+<p>Check out the <a href="https://help.accusoft.com/PrizmDoc/latest/HTML/webframe.html">PrizmDoc Viewer product documentation</a>.</p>
+
+<p>Still need help? Contact <a href="https://www.accusoft.com/support">Accusoft Support</a>.</p>
+
+<br />

@@ -1,0 +1,19 @@
+﻿body {
+  padding: 4em;
+  font: 14px Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+code {
+  font: 14px Consolas, "Courier New", monospace;
+  background-color: #ddd;
+  padding: 2px;
+  border-radius: 5px;
+}

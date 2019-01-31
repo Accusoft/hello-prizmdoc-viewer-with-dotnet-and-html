@@ -1,0 +1,70 @@
+/* this stylesheet contains only fonts used for eSignature. This sheet can be used on pages that do not include 
+ * the full viewer, but still want to take advantage of the fonts. The fonts are also included in viewer.css, so 
+ * that this sheet does not need to be requested separately by default. It is, however, used in printTemplate.html.
+ */
+@font-face {
+  font-family: 'Grand Hotel';
+  src: url('../fonts/GrandHotel-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Great Vibes';
+  src: url('../fonts/GreatVibes-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pacifico';
+  src: url('../fonts/Pacifico-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sacramento';
+  src: url('../fonts/Sacramento-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cedarville Cursive';
+  src: url('../fonts/CedarvilleCursive-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('../fonts/DancingScript-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Italianno';
+  src: url('../fonts/Italianno-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'La Belle Aurore';
+  src: url('../fonts/LaBelleAurore-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PT Mono';
+  src: url('../fonts/PTMono-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Fira Sans';
+  src: url('../fonts/FiraSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PT Serif';
+  src: url('../fonts/PFSerif-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

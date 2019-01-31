@@ -1,0 +1,120 @@
+.pccv .pcc-nav-tabset .pcc-tab-item .pcc-icon {
+  filter: alpha(opacity=60);
+}
+.pccv .pcc-nav-tabset .pcc-tab-item.pcc-active .pcc-icon,
+.pccv .pcc-slider .pcc-slider-thumb {
+  filter: alpha(opacity=100);
+}
+.pccv .pcc-nav-tabset .pcc-tab-pane {
+  border-bottom: 1px solid #aaa;
+}
+.pccv .pcc-nav-tabset .pcc-tab-pane.pcc-tab-vertical {
+  border-bottom: none;
+  border-right: 1px solid #aaa;
+}
+.pccv .pcc-nav-tabset .pcc-tab-pane.pcc-tab-vertical.pcc-right {
+  border-bottom: none;
+  border-left: 1px solid #aaa;
+}
+.pccv .pcc-context-menu {
+  border: 1px solid #aaa;
+}
+.pccv .pcc-context-menu.pcc-move-bottom .pcc-dropdown {
+  border-top: 1px solid #c2c5ce;
+}
+.pccv .pcc-nav-tabset .pcc-tab-pane .pcc-icon {
+  background-color: #f2f3f6;
+}
+.pccv .pcc-dialog .pcc-icon,
+.pccv .pcc-context-menu .pcc-icon,
+.pccv .pcc-overlay-esign .pcc-icon {
+  background-color: #e7e9ef;
+}
+.pccv .pcc-context-menu .pcc-tabs div .pcc-icon {
+  background-color: #d5d8e3;
+}
+.pccv .pcc-context-menu .pcc-tabs div.pcc-active .pcc-icon {
+  background-color: #e7e9ef;
+}
+.pccv .pcc-nav-tabset .pcc-tab-pane .pcc-active.pcc-icon,
+.pccv .pcc-dialog .pcc-active.pcc-icon,
+.pccv .pcc-context-menu .pcc-active.pcc-icon {
+  background-color: #c2c5ce;
+  border-top: 1px solid #c2c5ce;
+}
+.pccv .pcc-dialog .pcc-icon {
+  background-color: #e7e9ef;
+}
+.pccv .pcc-nav-tabset .pcc-tab-pane .pcc-icon.pcc-disabled,
+.pccv .pcc-icon.pcc-disabled {
+  filter: alpha(opacity=20);
+}
+.pccv .pcc-overlay-esign .pcc-esign-draw-context {
+  height: 130px;
+  position: relative;
+  overflow: hidden;
+}
+.pccv .pcc-hide-lg {
+  display: none;
+}
+.pccv .pcc-show-lg {
+  display: block !important;
+}
+.pccv .pcc-icon.pcc-show-lg {
+  display: inline-block !important;
+}
+.pccv .pcc-hide-lg {
+  display: none !important;
+}
+.pccv .pcc-dialog {
+  border-right: 1px solid #aaa;
+}
+.pccv .pcc-dialog [class*=col] {
+  margin: 0;
+}
+.pccv .pcc-dialog .pcc-row {
+  float: left;
+  margin: 4px 0;
+}
+.pccv [data-pcc-notify] {
+  margin: auto;
+  width: 300px;
+}
+.pccv .pcc-annotation-save-msg {
+  padding: 3px 0 5px 0;
+  line-height: 17px;
+}
+.pccv .pcc-overlay-esign .pcc-overlay-inner {
+  height: 400px\9;
+}
+.pccv .pcc-view-content.pcc-tall {
+  -ms-overflow-x: hidden;
+}
+.pcc-valign-mid {
+  display: table-cell;
+  vertical-align: middle;
+}
+.pcc-cell-content {
+  overflow: hidden;
+}
+.pcc-conversation-selected {
+  margin-left: -5px;
+  margin-right: 5px;
+}
+.pccv .pcc-skinny-comments.pccPageListComments .pcc-expanded.pcc-conversation-container {
+  top: -3px;
+  right: 38px;
+}
+.pcc-image-stamp-img {
+  height: auto;
+  max-height: available;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.pccv .pccThumbnail.pcc-thumbnail-selected .pccThumbnailView {
+  outline: 2px solid #aaa;
+}
+ul.pcc-immediate-action-menu {
+  background-image: none !important;
+}
