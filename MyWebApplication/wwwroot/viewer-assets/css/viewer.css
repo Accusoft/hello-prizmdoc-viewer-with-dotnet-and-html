@@ -219,14 +219,14 @@ html body {
 .pccv .pcc-icon[disabled] {
   color: #bbbbbb;
   border-color: #bbbbbb;
-  opacity: .3;
+  opacity: 0.3;
   filter: alpha(opacity=30);
   cursor: default !important;
 }
 .pccv [data-pcc-radio].pcc-disabled {
   color: #bbbbbb;
   border-color: none;
-  opacity: .3;
+  opacity: 0.3;
   filter: alpha(opacity=30);
   cursor: default !important;
 }
@@ -564,7 +564,7 @@ html body {
 .pccv [data-pcc-checkbox].pcc-disabled {
   color: #bbbbbb;
   border-color: none;
-  opacity: .2;
+  opacity: 0.2;
   filter: alpha(opacity=20);
   cursor: default !important;
 }
@@ -1022,7 +1022,7 @@ html body {
     display: block;
     z-index: 5;
     border-bottom: 1px solid #555;
-    opacity: .9;
+    opacity: 0.9;
   }
   .pccv .pcc-nav-tabset .pcc-tab .pcc-tab-item.pcc-hide {
     display: none;
@@ -2087,7 +2087,7 @@ html body {
   margin: 0 0 10px;
   font-weight: 100;
   color: rgba(0, 0, 0, 0.4);
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
 }
 .pcc-image-stamp-list {
   max-height: 330px;
@@ -2126,7 +2126,7 @@ html body {
   margin: 0 0 5px;
 }
 .pcc-image-stamp-list ul.grid li p {
-  font-size: .9em;
+  font-size: 0.9em;
   line-height: 1.5em;
   color: #959595;
 }
@@ -2690,7 +2690,7 @@ html body {
   .pcc-immediate-action-menu.pcc-hover-trigger {
     width: 26px;
     height: 26px;
-    opacity: .8;
+    opacity: 0.8;
     overflow: hidden;
     -webkit-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;

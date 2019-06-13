@@ -1,18 +1,21 @@
-Copyright © 2019 Accusoft Corporation
+Viewercontrol.js Permission Notice
 
-Fonts, located in the MyWebApplication/wwwroot/viewer-assets/fonts/ directory,
-are each copyright by their respective authors and licensed separately. See the
-associated LICENSE.txt file for each font.
+Copyright © 2018-2019 Accusoft Corporation
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
+this software viewercontrol.js and associated files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
+use, copy, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, and to permit persons to whom the Software is furnished to do so,
+provided that and subject to the following conditions:
+
+    1. The Software continues to use and to require a properly-licensed version
+       of Accusoft Corporation’s PrizmDoc Viewer product only;
+    2. The Software is not modified; and
+    3. The Software is not decompiled or reverse-engineered.
 
 The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+copies or substantial portions of the Software, and
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS

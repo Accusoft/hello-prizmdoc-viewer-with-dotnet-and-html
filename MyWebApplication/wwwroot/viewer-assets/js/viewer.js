@@ -6144,10 +6144,12 @@ var PCCViewer = window.PCCViewer || {};
                     viewer.viewerNodes.$searchMatchWholeWord.removeClass('pcc-active').addClass('pcc-disabled');
                     viewer.viewerNodes.$searchBeginsWith.removeClass('pcc-active').addClass('pcc-disabled');
                     viewer.viewerNodes.$searchEndsWith.removeClass('pcc-active').addClass('pcc-disabled');
+                    viewer.viewerNodes.$searchExactPhrase.removeClass('pcc-active').addClass('pcc-disabled');
                 } else {
                     viewer.viewerNodes.$searchMatchWholeWord.removeClass('pcc-disabled');
                     viewer.viewerNodes.$searchBeginsWith.removeClass('pcc-disabled');
                     viewer.viewerNodes.$searchEndsWith.removeClass('pcc-disabled');
+                    viewer.viewerNodes.$searchExactPhrase.removeClass('pcc-disabled');
                 }
 
                 return true;

@@ -19,11 +19,7 @@
     <script src="~/viewer-assets/js/jquery-1.10.2.min.js"></script>
     <script src="~/viewer-assets/js/jquery.hotkeys.min.js"></script>
     <script src="~/viewer-assets/js/underscore.min.js"></script>
-    <!-- The viewercontrol.js file powers core viewing functionality (such as rednering pages).
-         It is proprietary and non-modifiable. It is delivered via the @@prizmdoc/viewer-core npm package.
-         For simplicity, we are acquiring it here via a popular npm CDN.
-         However, you could acquire this file yourself ahead of time (via npm or otherwise) and store it in your viewer-assets directory. -->
-    <script src="https://cdn.jsdelivr.net/npm/@@prizmdoc/viewer-core@1.0/viewercontrol.js"></script>
+    <script src="~/viewer-assets/js/viewercontrol.js"></script>
     <script src="~/viewer-assets/js/viewer.js"></script>
     <script src="~/viewer-assets/js/viewerCustomizations.js"></script>
 
@@ -34,7 +30,7 @@
           documentID:       '@Model.ViewingSessionId',
           imageHandlerUrl:  '/pas-proxy',        // Base path the viewer should use to make requests to PAS (PrizmDoc Application Services).
           viewerAssetsPath: 'viewer-assets',     // Base path the viewer should use for static assets
-          resourcePath:     'viewer-assets/img', // Base path that viewer-core should use for images
+          resourcePath:     'viewer-assets/img', // Base path the viewer should use for images
           language: viewerCustomizations.languages['en-US'],
           template: viewerCustomizations.template,
           icons:    viewerCustomizations.icons,
