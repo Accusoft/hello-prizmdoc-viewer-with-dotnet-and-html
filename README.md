@@ -6,23 +6,17 @@ A minimal ASP.NET Core web application which integrates PrizmDoc Viewer.
 
 ### For the Command Line
 
-- [.NET Core SDK 2.2 or later](https://dotnet.microsoft.com/download/archives)
+- [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 ### For Visual Studio
 
-- [Visual Studio 2017 version 15.9 or later](https://visualstudio.microsoft.com/downloads/) with the **ASP.NET and web development** workload
-- [.NET Core SDK 2.2 or later](https://dotnet.microsoft.com/download/archives)
+- [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/)
 
 ### For Visual Studio Code
 
+- [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [Visual Studio Code](https://code.visualstudio.com/download)
-- [.NET Core SDK 2.2 or later](https://dotnet.microsoft.com/download/archives)
-- [C# for Visual Studio Code version 1.17.1 or later](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (if you don't have this extension installed, running the sample will fail with an error dialog that says "Configured type 'coreclr' is not supported.")
-
-### For Visual Studio for Mac
-
-- [Visual Studio for Mac version 7.7 or later](https://www.visualstudio.com/downloads/)
-- [.NET Core SDK 2.2 or later](https://dotnet.microsoft.com/download/archives)
+- [C# for Visual Studio Code extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) (if you don't have this extension installed, running the sample will fail with an error dialog that says "Configured type 'coreclr' is not supported.")
 
 ## Setup
 

@@ -1,6 +1,6 @@
 Viewercontrol.js Permission Notice
 
-Copyright © 2018-2019 Accusoft Corporation
+Copyright © 2018-2020 Accusoft Corporation
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software viewercontrol.js and associated files (the "Software"), to deal in
@@ -23,3 +23,13 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Exceptions:
+
+    - D3.js is copyright Michael Bostock and licensed under
+      the BSD 3-Clause license. See 
+      https://github.com/d3/d3/blob/2a7d873b3fadc4c808b2724db9b0663aa476583b/LICENSE.
+
+    - better-random-numbers-for-javascript is copyright Johannes Baagøe and licensed under
+      the MIT license. See 
+      https://github.com/nquinlan/better-random-numbers-for-javascript-mirror/blob/master/LICENSE.md.

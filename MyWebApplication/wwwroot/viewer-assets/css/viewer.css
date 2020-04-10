@@ -3352,6 +3352,7 @@ html body {
   border: 1px inset #c2c5ce;
   margin-right: 5px;
   cursor: pointer;
+  overflow: hidden;
 }
 .pccv .pcc-dialog .pcc-annotation-layer-review-current .pcc-checkbox svg,
 .pccv .pcc-dialog .pcc-annotation-layer-review-other .pcc-checkbox svg {

@@ -85,14 +85,14 @@ namespace MyWebApplication
             var pasHttpClient = PasUtil.CreatePasHttpClient(configuration);
 
             // Test POST /ViewingSession to see whether the configuration will work or not
-            var response = await pasHttpClient.PostAsJsonAsync("ViewingSession", new
+            var response = await pasHttpClient.PostAsync("ViewingSession", new StringContent(JsonConvert.SerializeObject(new
             {
                 source = new
                 {
                     type = "upload",
                     displayName = "test"
                 }
-            });
+            })));
             var json = await response.Content.ReadAsStringAsync();
             string errorCode = null;
 

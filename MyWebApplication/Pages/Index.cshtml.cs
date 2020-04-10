@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace MyWebApplication.Pages
@@ -15,15 +16,15 @@ namespace MyWebApplication.Pages
     {
         protected ILogger Logger { get; }
         protected IConfiguration Configuration { get; }
-        protected IHostingEnvironment HostingEnvironment { get; }
+        protected IWebHostEnvironment WebHostEnvironment { get; }
 
         protected HttpClient PasHttpClient { get; }
 
-        public IndexModel(IConfiguration configuration, ILogger<IndexModel> logger, IHostingEnvironment hostingEnvironment)
+        public IndexModel(IConfiguration configuration, ILogger<IndexModel> logger, IWebHostEnvironment webHostEnvironment)
         {
             Configuration = configuration;
             Logger = logger;
-            HostingEnvironment = hostingEnvironment;
+            WebHostEnvironment = webHostEnvironment;
             PasHttpClient = PasUtil.CreatePasHttpClient(Configuration);
         }
 
@@ -36,14 +37,14 @@ namespace MyWebApplication.Pages
             string json;
 
             // 1. Create a new viewing session
-            response = await PasHttpClient.PostAsJsonAsync("ViewingSession", new
+            response = await PasHttpClient.PostAsync("ViewingSession", new StringContent(JsonConvert.SerializeObject(new
             {
                 source = new
                 {
                     type = "upload",
                     displayName = DocumentFilename
                 }
-            });
+            })));
             json = await response.Content.ReadAsStringAsync();
 
             // 2. Send the viewingSessionId and viewer assets to the browser right away so the viewer UI can start loading.
@@ -58,15 +59,13 @@ namespace MyWebApplication.Pages
             Task.Run(async () =>
             {
                 try {
-                    var filepath = Path.Combine(HostingEnvironment.ContentRootPath, "Documents", DocumentFilename);
-                    using (var stream = System.IO.File.OpenRead(filepath))
-                    {
-                        var route = $"ViewingSession/u{ViewingSessionId}/SourceFile";
-                        var content = new StreamContent(stream);
-                        content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                        response = await PasHttpClient.PutAsync(route, content);
-                        response.EnsureSuccessStatusCode();
-                    }
+                    var filepath = Path.Combine(WebHostEnvironment.ContentRootPath, "Documents", DocumentFilename);
+                    using var stream = System.IO.File.OpenRead(filepath);
+                    var route = $"ViewingSession/u{ViewingSessionId}/SourceFile";
+                    var content = new StreamContent(stream);
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+                    response = await PasHttpClient.PutAsync(route, content);
+                    response.EnsureSuccessStatusCode();
                 } catch (Exception e) {
                     Logger.LogError(e.ToString());
                 }
