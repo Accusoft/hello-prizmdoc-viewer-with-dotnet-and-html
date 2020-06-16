@@ -2614,6 +2614,8 @@ html body {
   color: #555;
   will-change: top, left, opacity;
   white-space: nowrap;
+  display: block;
+  font-size: 16px;
   max-width: 300px;
   max-height: 50%;
   overflow: auto;
@@ -2648,6 +2650,13 @@ html body {
 .pcc-immediate-action-menu li:hover {
   background: #f2f3f6;
 }
+.pcc-immediate-action-menu-item > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pcc-immediate-action-menu-item .pcc-icon {
+  margin-right: 5px;
+}
 @-webkit-keyframes pcc-menuEnter {
   0% {
     opacity: 0;
@@ -2673,13 +2682,15 @@ html body {
     left: 15% !important;
     right: 15% !important;
     max-width: initial;
+    width: auto;
+    height: auto;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom: none;
     font-size: 1rem;
     background-image: none !important;
   }
-  .pcc-immediate-action-menu .pcc-icon {
+  .pcc-immediate-action-menu > .pcc-icon {
     display: none;
   }
   .pcc-immediate-action-menu li {
@@ -2691,7 +2702,7 @@ html body {
     width: 26px;
     height: 26px;
     opacity: 0.8;
-    overflow: hidden;
+    overflow: visible;
     -webkit-transition: opacity 300ms ease-in-out;
     transition: opacity 300ms ease-in-out;
     will-change: width, height, opacity;
@@ -2703,9 +2714,11 @@ html body {
     opacity: 1;
     background-image: none;
     overflow-y: auto;
+    -webkit-transition: none;
+    transition: none;
   }
-  .pcc-immediate-action-menu.pcc-hover-trigger:hover .pcc-icon,
-  .pcc-immediate-action-menu.pcc-hover-trigger.pcc-expanded .pcc-icon {
+  .pcc-immediate-action-menu.pcc-hover-trigger:hover > .pcc-icon,
+  .pcc-immediate-action-menu.pcc-hover-trigger.pcc-expanded > .pcc-icon {
     display: none;
   }
   .pcc-immediate-action-menu.pcc-hover-trigger li {
@@ -2904,6 +2917,12 @@ html body {
   -moz-opacity: 0.2;
   opacity: 0.2;
   filter: alpha(opacity=20);
+}
+.pccv .pcc-select-redaction-reason .pcc-dropdown > div {
+  display: block;
+}
+.pccv .pcc-select-redaction-reason .pcc-dropdown > div .pcc-select-multiple-redaction-reason {
+  margin-left: 4px;
 }
 @media (max-width: 767px) {
   .pcc-redaction-reason-menu {
