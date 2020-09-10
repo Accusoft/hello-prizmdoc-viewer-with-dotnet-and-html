@@ -212,6 +212,9 @@ html body {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
 }
+.pccv .pcc-icon.pcc-active .pcc-icon-badge {
+  background-color: #a00;
+}
 .pccv .pcc-icon.pcc-active.pcc-locked {
   background-color: #afb0b3 !important;
 }
@@ -234,6 +237,12 @@ html body {
   position: relative;
   top: -2px;
   left: -5px;
+}
+.pccv .pcc-icon-container {
+  padding: 2px 1px 0 0;
+  border: none !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 .pccv .pcc-icon-height {
   line-height: 26px;
@@ -290,6 +299,7 @@ html body {
   background: #f2f3f6;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .pccv button.pcc-align-left {
   float: left;
@@ -298,6 +308,22 @@ html body {
 .pccv button.pcc-align-right {
   float: right;
   margin: 7px 0;
+}
+.pccv button .pcc-icon-badge {
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  padding: 2px 3px 2px 3px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+.pccv button .pcc-icon-badge.pcc-icon-badge-wide {
+  left: 12px;
+  padding: 2px 2px 2px 2px;
 }
 .pccv button:active {
   background-color: #e7e9ef;
@@ -3444,19 +3470,17 @@ html body {
   width: 98%;
   height: 55px;
 }
-.pccv [data-pcc-toggle=dropdown-download-annotations-format].pcc-select {
-  height: 20px;
-}
-.pccv [data-pcc-toggle=dropdown-download-annotations-format].pcc-disabled {
+.pccv .pcc-select-download.pcc-disabled {
   color: #bbbbbb;
   cursor: default !important;
 }
-.pccv [data-pcc-toggle=dropdown-download-annotations-format] .pcc-label {
+.pccv [data-pcc-toggle=dropdown-download-annotations] .pcc-dropdown {
   width: 100%;
+  height: 78px;
 }
-.pccv [data-pcc-toggle=dropdown-download-annotations-format] .pcc-dropdown {
-  width: 98px;
-  height: 52px;
+.pccv [data-pcc-toggle=dropdown-download-redactions] .pcc-dropdown {
+  width: 100%;
+  height: 78px;
 }
 .pccv .pcc-dialog-download .pcc-row {
   margin: 0 0 10px;
@@ -3465,47 +3489,107 @@ html body {
   height: 100%;
   overflow: hidden;
 }
-.pccv .pcc-attachments-section-title {
+.pccv .pcc-attachments-panel {
+  width: 220px;
+  height: auto;
+  top: 40px;
+  left: 185px;
+  font-size: 12px;
+  background: #f2f3f6;
+  position: absolute;
+  z-index: 9999;
+  border: 1px solid;
+  border-color: #969696;
+  box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px 0px;
+  padding: 10px;
+  max-height: 450px;
+  overflow-y: auto;
+}
+.pccv .pcc-attachments-panel button.pcc-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.pccv .pcc-attachments-panel button.pcc-disabled a {
+  cursor: inherit;
+  color: #c2c5ce;
+}
+.pccv .pcc-attachments-panel .pcc-disabled .pcc-icon {
+  opacity: 0.1;
+}
+.pccv .pcc-attachments-panel .pcc-attachments-section-title {
   position: relative;
   line-height: 26px;
   padding: 0 5px;
-  background-color: #7d7f85;
-  color: #f2f3f6;
+  font-size: 14px;
+}
+.pccv .pcc-attachments-panel .pcc-attachments-to-prev-email {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  box-shadow: 0;
+}
+.pccv .pcc-attachments-panel a {
+  flex-grow: 1;
+  text-decoration: none;
+  color: #555;
+}
+.pccv .pcc-attachments-panel span {
+  flex-grow: 0;
 }
 .pccv .pcc-attachments-section .pcc-attachments-section-content {
   padding: 0;
   overflow: auto;
   background-color: #f2f3f6;
-  border-left: 1px solid #c2c5ce;
-  border-right: 1px solid #c2c5ce;
-  border-bottom: 1px solid #c2c5ce;
   max-height: 90%;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email {
   padding: 10px;
   margin: 0 !important;
-  border: 1px solid #f2f3f6;
+  line-height: 1.5;
+  cursor: pointer;
+  clear: both;
+  word-break: break-word;
+  background-color: white;
+}
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email .pcc-icon.pcc-icon-email {
+  margin-left: -4px;
+}
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email .pcc-icon.pcc-icon-check {
+  margin-top: -4px !important;
+  float: right;
+  display: none;
+}
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email a {
+  font-weight: bold;
+}
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email.pcc-active .pcc-icon.pcc-icon-check {
+  display: block;
+}
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  margin: 5px 0 5px 0 !important;
+  border: 1px solid #fff;
+  background: #fff;
   line-height: 1.5;
   cursor: pointer;
   clear: both;
   word-break: break-word;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row.pcc-odd {
-  background: #fff;
-  border-color: #fff;
-}
 .pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row div {
   padding: 3px;
   font-size: 12px;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row span {
-  font-weight: bold;
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row .pcc-icon.pcc-icon-check {
+  float: right;
+  display: none;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row.pcc-active {
-  background: #d3def4;
-  border-color: #aabfea;
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row.pcc-active .pcc-icon.pcc-icon-check {
+  display: inline-block;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row.pcc-active .pcc-col-8 {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row.pcc-active .pcc-icon.pcc-icon-check .pcc-col-8 {
   border-color: #aabfea;
 }
 .pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row .pcc-col-2 {
@@ -3517,11 +3601,4 @@ html body {
   border-bottom: none;
   min-height: 30px;
   word-wrap: break-word;
-}
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row a {
-  text-decoration: none;
-  display: block;
-  height: 100%;
-  width: 100%;
-  color: #555;
 }
