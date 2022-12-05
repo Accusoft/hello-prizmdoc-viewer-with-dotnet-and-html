@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -53,6 +54,15 @@ namespace MyWebApplication
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            
+            app.Use(async (context, nextMiddleware) => {
+                context.Response.OnStarting(() => {
+                    context.Response.Headers.Add("Content-Security-Policy", "script-src 'self'");
+
+                    return Task.FromResult(0);
+                });
+                await nextMiddleware();
+            });
 
             // Setup a proxy route to PAS (PrizmDoc Application Services).
             //
