@@ -26,17 +26,10 @@ namespace MyWebApplication
             {
                 ValidatePasConnection(configuration);
             }
-            catch (Exception e)
+            catch (Exception e) when (!Debugger.IsAttached)
             {
-                if (Debugger.IsAttached)
-                {
-                    throw;
-                }
-                else
-                {
-                    Console.WriteLine("ERROR: " + e.Message);
-                    Environment.Exit(1);
-                }
+                Console.WriteLine("ERROR: " + e.Message);
+                Environment.Exit(1);
             }
         }
 
@@ -70,9 +63,9 @@ namespace MyWebApplication
                 throw new Exception("Missing required configuration setting \"PrizmDoc:PasBaseUrl\". See the README.md for more information.");
             }
 
-            string defaultPasBaseUrl = "https://api.accusoft.com/prizmdoc/";
-            string defaultCloudApiKey = "YOUR_API_KEY";
-            string defaultPasSecretKey = null;
+            const string defaultPasBaseUrl = "https://api.accusoft.com/prizmdoc/";
+            const string defaultCloudApiKey = "YOUR_API_KEY";
+            const string defaultPasSecretKey = null;
 
             var configurationHasNotYetBeenSet = configuration["PrizmDoc:PasBaseUrl"] == defaultPasBaseUrl && configuration["PrizmDoc:CloudApiKey"] == defaultCloudApiKey && configuration["PrizmDoc:PasSecretKey"] == defaultPasSecretKey;
 

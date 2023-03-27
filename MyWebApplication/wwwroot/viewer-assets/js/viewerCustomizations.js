@@ -75,9 +75,9 @@ window.viewerCustomizations = {
         "noResults": "No attachments available",
         "title": "Attachments",
         "tooltip": "Attachments",
-        "email": "Email",
-        "returnToPrevEmail": "Back to previous email",
-        "primaryEmail": "Primary email"
+        "document": "Document",
+        "returnToPrevDocument": "Back to previous document",
+        "primaryDocument": "Primary document"
       },
       "beginsWith": "Begins With",
       "borderColorMenuItem": "Border Color",
@@ -1422,13 +1422,9 @@ __p += '<div data-pcc-nav-trigger class="pcc-tab-item pcc-trigger pcc-hide"><spa
 ((__t = ( data.imageOperations.svgStrokeWidth )) == null ? '' : __t) +
 '</div> <div class="pcc-slider pcc-image-tools-slider" data-pcc-slider="svgStrokeWidth"> <div class="pcc-slider-track pcc-image-tools-slider-control"> <div class="pcc-slider-thumb pcc-icon pcc-icon-annotate-ellipse-filled"></div> </div> </div> <div data-pcc-image-tools-slider-svg-stroke-value class="pcc-image-tools-slider-value">1</div> </div> </div> <button data-pcc-attachments class="pcc-icon pcc-icon-paperclip pcc-hide" data-pcc-removable-id="attachments" title="' +
 ((__t = ( data.attachments.tooltip )) == null ? '' : __t) +
-'"> <span class="pcc-icon-badge">0</span> </button> <div data-pcc-attachments-panel class="pccv pcc-hide pcc-attachments-panel" tabindex=-1> <div class="pcc-dialog-wrapper"> <div class="pcc-attachments-section pcc-attachments-section-current-email"> <div class="pcc-attachments-section-title"> ' +
-((__t = ( data.attachments.email )) == null ? '' : __t) +
-' </div> <div class="pcc-attachments-section-content"> <div class="pcc-attachments-current-email pcc-row"> <span class="pcc-icon pcc-icon-email"></span> <a class="pcc-attachments-current-email-name" href="#"></a> <span class="pcc-icon pcc-icon-check"></span> </div> </div> <button class="pcc-attachments-to-prev-email pcc-disabled"> <span class="pcc-icon pcc-icon-arrow-left"></span> <a href="#">' +
-((__t = ( data.attachments.returnToPrevEmail)) == null ? '' : __t) +
-'</a> </button> </div> <div class="pcc-attachments-section"> <div data-pcc-attachments-panel-list-title class="pcc-attachments-section-title"> ' +
-((__t = ( data.attachments.title )) == null ? '' : __t) +
-' </div> <div data-pcc-attachments-panel-list class="pcc-attachments-section-content"></div> </div> </div> </div> </div> </div> <div class="pcc-tab-preview"> <div class="pcc-center"> <button data-pcc-end-preview>' +
+'"> <span class="pcc-icon-badge">0</span> </button> <div data-pcc-attachments-panel class="pccv pcc-hide pcc-attachments-panel" tabindex=-1> <div class="pcc-dialog-wrapper"> <div class="pcc-attachments-section pcc-attachments-section-current-document"> <div class="pcc-attachments-section-content"> <div class="pcc-attachments-current-document pcc-row"> <span class="pcc-icon pcc-icon-document"></span> <a class="pcc-attachments-current-document-name" href="#"></a> <span class="pcc-icon pcc-icon-check"></span> </div> </div> <button class="pcc-attachments-to-prev-document pcc-disabled"> <span class="pcc-icon pcc-icon-arrow-left"></span> <a href="#">' +
+((__t = ( data.attachments.returnToPrevDocument)) == null ? '' : __t) +
+'</a> </button> </div> <div class="pcc-attachments-section"> <div data-pcc-attachments-panel-list class="pcc-attachments-section-content"></div> </div> </div> </div> </div> </div> <div class="pcc-tab-preview"> <div class="pcc-center"> <button data-pcc-end-preview>' +
 ((__t = ( data.previewEnd )) == null ? '' : __t) +
 '</button> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="search" data-pcc-removable-id="searchTab"> <div class="pcc-tab-item"><span class="pcc-icon pcc-icon-search"></span> ' +
 ((__t = ( data.search )) == null ? '' : __t) +

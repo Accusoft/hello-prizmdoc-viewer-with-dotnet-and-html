@@ -3517,13 +3517,7 @@ html body {
 .pccv .pcc-attachments-panel .pcc-disabled .pcc-icon {
   opacity: 0.1;
 }
-.pccv .pcc-attachments-panel .pcc-attachments-section-title {
-  position: relative;
-  line-height: 26px;
-  padding: 0 5px;
-  font-size: 14px;
-}
-.pccv .pcc-attachments-panel .pcc-attachments-to-prev-email {
+.pccv .pcc-attachments-panel .pcc-attachments-to-prev-document {
   width: 100%;
   text-align: left;
   border: 0;
@@ -3543,7 +3537,7 @@ html body {
   background-color: #f2f3f6;
   max-height: 90%;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-document {
   padding: 10px;
   margin: 0 !important;
   line-height: 1.5;
@@ -3552,18 +3546,18 @@ html body {
   word-break: break-word;
   background-color: white;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email .pcc-icon.pcc-icon-email {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-document .pcc-icon.pcc-icon-document {
   margin-left: -4px;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email .pcc-icon.pcc-icon-check {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-document .pcc-icon.pcc-icon-check {
   margin-top: -4px !important;
   float: right;
   display: none;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email a {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-document a {
   font-weight: bold;
 }
-.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-email.pcc-active .pcc-icon.pcc-icon-check {
+.pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-attachments-current-document.pcc-active .pcc-icon.pcc-icon-check {
   display: block;
 }
 .pccv .pcc-attachments-section .pcc-attachments-section-content .pcc-row {

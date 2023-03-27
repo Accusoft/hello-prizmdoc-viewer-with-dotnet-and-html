@@ -50,7 +50,6 @@ namespace MyWebApplication.Pages
             // 2. Send the viewingSessionId and viewer assets to the browser right away so the viewer UI can start loading.
             ViewingSessionId = (string)JObject.Parse(json)["viewingSessionId"];
 
-
             // 3. Upload the source document to PrizmDoc so that it can start being converted to SVG.
             //    The viewer will request this content and receive it automatically once it is ready.
             //    We do this part on a background thread so that we don't block the HTML from being

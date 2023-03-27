@@ -54,7 +54,7 @@ namespace MyWebApplication
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            
+
             app.Use(async (context, nextMiddleware) => {
                 context.Response.OnStarting(() => {
                     context.Response.Headers.Add("Content-Security-Policy", "script-src 'self'");
@@ -104,10 +104,7 @@ namespace MyWebApplication
 
             app.UseRouting();
             app.UseAuthorization();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
-            });
+            app.UseEndpoints(endpoints => endpoints.MapRazorPages());
         }
     }
 }
