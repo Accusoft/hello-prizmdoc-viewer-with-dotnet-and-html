@@ -65,7 +65,7 @@ namespace MyWebApplication
 
             const string defaultPasBaseUrl = "https://api.accusoft.com/prizmdoc/";
             const string defaultCloudApiKey = "YOUR_API_KEY";
-            const string defaultPasSecretKey = null;
+            const string defaultPasSecretKey = "YOUR_SECRET_KEY";
 
             var configurationHasNotYetBeenSet = configuration["PrizmDoc:PasBaseUrl"] == defaultPasBaseUrl && configuration["PrizmDoc:CloudApiKey"] == defaultCloudApiKey && configuration["PrizmDoc:PasSecretKey"] == defaultPasSecretKey;
 

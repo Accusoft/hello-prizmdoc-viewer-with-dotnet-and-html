@@ -37,14 +37,31 @@ namespace MyWebApplication.Pages
             string json;
 
             // 1. Create a new viewing session
-            response = await PasHttpClient.PostAsync("ViewingSession", new StringContent(JsonConvert.SerializeObject(new
+
+            if (Configuration["enableClientSideViewing"] == "True")
             {
-                source = new
+                response = await PasHttpClient.PostAsync("ViewingSession", new StringContent(JsonConvert.SerializeObject(new
                 {
-                    type = "upload",
-                    displayName = DocumentFilename
-                }
-            })));
+                    source = new
+                    {
+                        type = "upload",
+                        displayName = DocumentFilename
+                    },
+                    allowedClientFileFormats = new string[1] {"pdf"}
+                }))) ;
+            }
+            else
+            {
+                response = await PasHttpClient.PostAsync("ViewingSession", new StringContent(JsonConvert.SerializeObject(new
+                {
+                    source = new
+                    {
+                        type = "upload",
+                        displayName = DocumentFilename
+                    }
+                })));
+            }
+
             json = await response.Content.ReadAsStringAsync();
 
             // 2. Send the viewingSessionId and viewer assets to the browser right away so the viewer UI can start loading.

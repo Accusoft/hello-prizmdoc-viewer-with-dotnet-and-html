@@ -66,6 +66,16 @@ The `PasSecretKey` must match the `secretKey` value specified in your PAS config
 dotnet user-secrets set "PrizmDoc:PasSecretKey" "YOUR_PAS_SECRET_KEY" --project MyWebApplication
 ```
 
+### Hybrid Viewing
+
+This sample includes a [Hybrid Viewing](https://help.accusoft.com/PrizmDoc/latest/HTML/client-side-pdf.html) option, which allows users to seamlessly switch between server-side and client-side rendering modes, providing a faster and smoother viewing experience.
+
+To enable client-side viewing, update the following configuration in your `appsettings.json`:
+
+```json
+  "enableClientSideViewing": "true"
+```
+
 ## Running the Sample
 
 To start the application from the command line:

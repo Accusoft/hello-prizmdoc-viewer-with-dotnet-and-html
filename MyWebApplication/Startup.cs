@@ -57,7 +57,7 @@ namespace MyWebApplication
 
             app.Use(async (context, nextMiddleware) => {
                 context.Response.OnStarting(() => {
-                    context.Response.Headers.Add("Content-Security-Policy", "script-src 'self'");
+                    context.Response.Headers.Add("Content-Security-Policy", "script-src 'self'; worker-src blob:");
 
                     return Task.FromResult(0);
                 });
