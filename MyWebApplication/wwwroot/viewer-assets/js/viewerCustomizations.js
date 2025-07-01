@@ -1447,15 +1447,9 @@ var __t, __p = '', __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 __p += '<div data-pcc-nav-trigger class="pcc-tab-item pcc-trigger pcc-hide"><span class="pcc-icon pcc-icon-view"></span> ' +
 ((__t = ( data.viewLabel )) == null ? '' : __t) +
-'</div> <div class="pcc-tabset pcc-nav-tabset" data-pcc-nav> <div class="pcc-tab" data-pcc-nav-tab="view" data-pcc-removable-id="viewTab"> <button class="pcc-tab-item"><span class="pcc-icon pcc-icon-view"></span> ' +
+'</div> <div class="pcc-tabset pcc-nav-tabset" data-pcc-nav role="tablist" id="pcc-tablist"> <div class="pcc-tab" data-pcc-nav-tab="view" data-pcc-removable-id="viewTab" role="presentation"> <button class="pcc-tab-item active" role="tab" aria-selected="true" aria-controls="view-toolbar" id="view-tab"><span class="pcc-icon pcc-icon-view"></span> ' +
 ((__t = ( data.viewLabel )) == null ? '' : __t) +
-'</button> <div class="pcc-tab-pane"> <div class="pcc-pull-right"> <button class="pcc-icon pcc-icon-document-compare pcc-hide" data-pcc-toggle="dialog-revision" title="' +
-((__t = ( data.docRevision )) == null ? '' : __t) +
-'"></button> <button class="pcc-icon pcc-icon-print" title="' +
-((__t = ( data.printButton )) == null ? '' : __t) +
-'" data-pcc-print="launch" data-pcc-removable-id="printing"></button> <button data-pcc-toggle="dialog-download" data-pcc-removable-id="download" class="pcc-icon pcc-icon-download" title="' +
-((__t = ( data.download )) == null ? '' : __t) +
-'"></button> </div> <div class="pcc-left"> <button data-pcc-toggle="dialog-thumbnails" class="pcc-icon pcc-icon-thumbnails" title="' +
+'</button> <div class="pcc-tab-pane pcc-tab-advanced" id="view-toolbar" role="tabpanel"> <div class="pcc-left pcc-pull-left"> <button data-pcc-toggle="dialog-thumbnails" class="pcc-icon pcc-icon-thumbnails" title="' +
 ((__t = ( data.thumbnails )) == null ? '' : __t) +
 '"></button> <button data-pcc-mouse-tool="AccusoftMagnifier" class="pcc-icon pcc-icon-magnifiertool" title="' +
 ((__t = ( data.magnifierTool )) == null ? '' : __t) +
@@ -1477,19 +1471,17 @@ __p += '<div data-pcc-nav-trigger class="pcc-tab-item pcc-trigger pcc-hide"><spa
 ((__t = ( data.attachments.tooltip )) == null ? '' : __t) +
 '"> <span class="pcc-icon-badge">0</span> </button> <div data-pcc-attachments-panel class="pccv pcc-hide pcc-attachments-panel" tabindex=-1> <div class="pcc-dialog-wrapper"> <div class="pcc-attachments-section pcc-attachments-section-current-document"> <div class="pcc-attachments-section-content"> <div class="pcc-attachments-current-document pcc-row"> <span class="pcc-icon pcc-icon-document"></span> <a class="pcc-attachments-current-document-name" href="#"></a> <span class="pcc-icon pcc-icon-check"></span> </div> </div> <button class="pcc-attachments-to-prev-document pcc-disabled"> <span class="pcc-icon pcc-icon-arrow-left"></span> <a href="#">' +
 ((__t = ( data.attachments.returnToPrevDocument)) == null ? '' : __t) +
-'</a> </button> </div> <div class="pcc-attachments-section"> <div data-pcc-attachments-panel-list class="pcc-attachments-section-content"></div> </div> </div> </div> </div> </div> <div class="pcc-tab-preview"> <div class="pcc-center"> <button data-pcc-end-preview>' +
+'</a> </button> </div> <div class="pcc-attachments-section"> <div data-pcc-attachments-panel-list class="pcc-attachments-section-content"></div> </div> </div> </div> </div> <div class="pcc-pull-right"> <button class="pcc-icon pcc-icon-document-compare pcc-hide" data-pcc-toggle="dialog-revision" title="' +
+((__t = ( data.docRevision )) == null ? '' : __t) +
+'"></button> <button class="pcc-icon pcc-icon-print" title="' +
+((__t = ( data.printButton )) == null ? '' : __t) +
+'" data-pcc-print="launch" data-pcc-removable-id="printing"></button> <button data-pcc-toggle="dialog-download" data-pcc-removable-id="download" class="pcc-icon pcc-icon-download" title="' +
+((__t = ( data.download )) == null ? '' : __t) +
+'"></button> </div> </div> <div class="pcc-tab-preview"> <div class="pcc-center"> <button data-pcc-end-preview>' +
 ((__t = ( data.previewEnd )) == null ? '' : __t) +
-'</button> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="search" data-pcc-removable-id="searchTab"> <button class="pcc-tab-item"><span class="pcc-icon pcc-icon-search"></span> ' +
+'</button> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="search" data-pcc-removable-id="searchTab" role="presentation"> <button class="pcc-tab-item" role="tab" aria-controls="search-toolbar" id="search-tab" tabindex="-1"><span class="pcc-icon pcc-icon-search"></span> ' +
 ((__t = ( data.search )) == null ? '' : __t) +
-'</button> <div class="pcc-tab-pane pcc-tab-advanced"> <div class="pcc-pull-right"> <button data-pcc-toggle="dialog-pii-detection" class="pcc-icon pcc-icon-person-search pcc-hide" title="' +
-((__t = ( data.piiDetect )) == null ? '' : __t) +
-'"></button> <button data-pcc-toggle="dialog-summarization" class="pcc-icon pcc-icon-text-short pcc-hide" title="' +
-((__t = ( data.summarizeDocument )) == null ? '' : __t) +
-'"></button> <button data-pcc-toggle="dialog-query" class="pcc-icon pcc-icon-file-question pcc-hide" title="' +
-((__t = ( data.queryDocument )) == null ? '' : __t) +
-'"></button> <button data-pcc-toggle="dialog-tag" class="pcc-icon pcc-icon-tag pcc-hide" title="' +
-((__t = ( data.classifyAndTagDocument )) == null ? '' : __t) +
-'"></button> </div> <div class="pcc-left"> <button class="pcc-icon pcc-icon-list pcc-search-menu-button" title="' +
+'</button> <div class="pcc-tab-pane pcc-tab-advanced" id="search-toolbar" role="tabpanel"> <div class="pcc-left pcc-pull-left"> <button class="pcc-icon pcc-icon-list pcc-search-menu-button" title="' +
 ((__t = ( data.searchOptions )) == null ? '' : __t) +
 '" data-pcc-toggle="dialog-search"></button> <div class="pcc-search-group pcc-search-group-input"> <button title="' +
 ((__t = ( data.previousSearches )) == null ? '' : __t) +
@@ -1519,7 +1511,15 @@ __p += '<div data-pcc-nav-trigger class="pcc-tab-item pcc-trigger pcc-hide"><spa
 ((__t = ( data.useWildcards )) == null ? '' : __t) +
 '"></button> <button data-pcc-search="proximity" class="pcc-icon pcc-icon-proximity" title="' +
 ((__t = ( data.proximitySearchToggle )) == null ? '' : __t) +
-'"></button> </div> </div> <div class="pcc-dropdown pcc-dropdown-search-box" data-pcc-toggle-id="dropdown-search-box"> <div class="pcc-toolbar">' +
+'"></button> </div> </div> <div class="pcc-pull-right"> <button data-pcc-toggle="dialog-pii-detection" class="pcc-icon pcc-icon-person-search pcc-hide" title="' +
+((__t = ( data.piiDetect )) == null ? '' : __t) +
+'"></button> <button data-pcc-toggle="dialog-summarization" class="pcc-icon pcc-icon-text-short pcc-hide" title="' +
+((__t = ( data.summarizeDocument )) == null ? '' : __t) +
+'"></button> <button data-pcc-toggle="dialog-query" class="pcc-icon pcc-icon-file-question pcc-hide" title="' +
+((__t = ( data.queryDocument )) == null ? '' : __t) +
+'"></button> <button data-pcc-toggle="dialog-tag" class="pcc-icon pcc-icon-tag pcc-hide" title="' +
+((__t = ( data.classifyAndTagDocument )) == null ? '' : __t) +
+'"></button> </div> <div class="pcc-dropdown pcc-dropdown-search-box" data-pcc-toggle-id="dropdown-search-box"> <div class="pcc-toolbar">' +
 ((__t = ( data.previousSearches )) == null ? '' : __t) +
 '</div> <div data-pcc-previous-search><span class="pcc-placeholder">' +
 ((__t = ( data.noPreviousSearches )) == null ? '' : __t) +
@@ -1527,17 +1527,9 @@ __p += '<div data-pcc-nav-trigger class="pcc-tab-item pcc-trigger pcc-hide"><spa
 ((__t = ( data.toggleAll )) == null ? '' : __t) +
 '</div> <div class="pcc-predefined-search" data-pcc-predefined-search></div> </div> <div class="pcc-dropdown pcc-dropdown-search-box" data-pcc-toggle-id="dropdown-search-fixed-box"> <div class="pcc-toolbar">' +
 ((__t = ( data.fixedSearchTerms )) == null ? '' : __t) +
-'</div> <div class="pcc-predefined-search" data-pcc-predefined-fixed-search></div> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="annotate" data-pcc-removable-id="annotateTab"> <button class="pcc-tab-item"><span class="pcc-icon pcc-icon-edit"></span> ' +
+'</div> <div class="pcc-predefined-search" data-pcc-predefined-fixed-search></div> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="annotate" data-pcc-removable-id="annotateTab" role="presentation"> <button class="pcc-tab-item" role="tab" aria-controls="annotate-toolbar" id="annotate-tab" tabindex="-1"><span class="pcc-icon pcc-icon-edit"></span> ' +
 ((__t = ( data.annotateLabel )) == null ? '' : __t) +
-'</button> <div class="pcc-tab-pane pcc-tab-advanced"> <div class="pcc-pull-right"> <button data-pcc-toggle="dialog-save-annotations" class="pcc-icon pcc-icon-save" title="' +
-((__t = ( data.saveAnnotations )) == null ? '' : __t) +
-'"></button> <button data-pcc-lock-editable-layer data-pcc-toggle="dialog-load-annotations" class="pcc-icon pcc-icon-load" title="' +
-((__t = ( data.loadAnnotations )) == null ? '' : __t) +
-'"></button> <button data-pcc-comments-panel class="pcc-icon pcc-icon-comment" title="' +
-((__t = ( data.commentsPanel )) == null ? '' : __t) +
-'"></button> <button data-pcc-toggle="dialog-download" data-pcc-removable-id="download" class="pcc-icon pcc-icon-download" title="' +
-((__t = ( data.download )) == null ? '' : __t) +
-'"></button> </div> <div class="pcc-left"> ';
+'</button> <div class="pcc-tab-pane pcc-tab-advanced" id="annotate-toolbar" role="tabpanel"> <div class="pcc-left pcc-pull-left"> ';
  if (data.annotationsMode === "LayeredAnnotations") { ;
 __p += ' <button data-pcc-toggle="dialog-annotation-layer-review" class="pcc-icon pcc-icon-list" title="' +
 ((__t = ( data.annotationLayerReview.annotationLayers )) == null ? '' : __t) +
@@ -1571,11 +1563,7 @@ __p += ' <button data-pcc-mouse-tool="AccusoftArrowAnnotation" data-pcc-default-
 ((__t = ( data.stampAnnotation )) == null ? '' : __t) +
 '"></button> <button data-pcc-mouse-tool="AccusoftImageStampAnnotation" data-pcc-context-menu="true" class="pcc-icon pcc-icon-image-stamp" title="' +
 ((__t = ( data.imageStampAnnotion )) == null ? '' : __t) +
-'" disabled></button> </div> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="redact" data-pcc-removable-id="redactTab"> <button class="pcc-tab-item"><span class="pcc-icon pcc-icon-redact"></span> ' +
-((__t = ( data.redactLabel )) == null ? '' : __t) +
-'</button> <div class="pcc-tab-pane"> <div class="pcc-pull-right"> <button data-pcc-toggle="dialog-pii-detection" class="pcc-icon pcc-icon-person-search pcc-hide" title="' +
-((__t = ( data.piiDetect )) == null ? '' : __t) +
-'"></button> <button data-pcc-toggle="dialog-save-annotations" class="pcc-icon pcc-icon-save" title="' +
+'" disabled></button> </div> </div> <div class="pcc-pull-right"> <button data-pcc-toggle="dialog-save-annotations" class="pcc-icon pcc-icon-save" title="' +
 ((__t = ( data.saveAnnotations )) == null ? '' : __t) +
 '"></button> <button data-pcc-lock-editable-layer data-pcc-toggle="dialog-load-annotations" class="pcc-icon pcc-icon-load" title="' +
 ((__t = ( data.loadAnnotations )) == null ? '' : __t) +
@@ -1583,7 +1571,9 @@ __p += ' <button data-pcc-mouse-tool="AccusoftArrowAnnotation" data-pcc-default-
 ((__t = ( data.commentsPanel )) == null ? '' : __t) +
 '"></button> <button data-pcc-toggle="dialog-download" data-pcc-removable-id="download" class="pcc-icon pcc-icon-download" title="' +
 ((__t = ( data.download )) == null ? '' : __t) +
-'"></button> </div> <div class="pcc-left"> ';
+'"></button> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="redact" data-pcc-removable-id="redactTab" role="presentation"> <button class="pcc-tab-item" role="tab" aria-controls="redact-toolbar" id="redact-tab" tabindex="-1"><span class="pcc-icon pcc-icon-redact"></span> ' +
+((__t = ( data.redactLabel )) == null ? '' : __t) +
+'</button> <div class="pcc-tab-pane pcc-tab-advanced" id="redact-toolbar" role="tabpanel"> <div class="pcc-left pcc-pull-left"> ';
  if (data.annotationsMode === "LayeredAnnotations") { ;
 __p += ' <button data-pcc-toggle="dialog-annotation-layer-review" class="pcc-icon pcc-icon-list" title="' +
 ((__t = ( data.annotationLayerReview.annotationLayers )) == null ? '' : __t) +
@@ -1597,13 +1587,19 @@ __p += ' <button data-pcc-mouse-tool="AccusoftRectangleRedaction" data-pcc-defau
 ((__t = ( data.pageRedactionButton )) == null ? '' : __t) +
 '" data-pcc-page-redaction="launch"></button> <span class="pcc-separator"></span> <button data-pcc-redactionViewMode class="pcc-icon pcc-icon-eye" title="' +
 ((__t = ( data.redactionViewMode )) == null ? '' : __t) +
-'"> </button> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="esign" data-pcc-removable-id="esignTab"> <button class="pcc-tab-item"><span class="pcc-icon pcc-icon-esign"></span> ' +
-((__t = ( data.esignLabel )) == null ? '' : __t) +
-'</button> <div class="pcc-tab-pane"> <div class="pcc-pull-right"> <button data-pcc-comments-panel class="pcc-icon pcc-icon-comment" title="' +
+'"> </button> </div> <div class="pcc-pull-right"> <button data-pcc-toggle="dialog-pii-detection" class="pcc-icon pcc-icon-person-search pcc-hide" title="' +
+((__t = ( data.piiDetect )) == null ? '' : __t) +
+'"></button> <button data-pcc-toggle="dialog-save-annotations" class="pcc-icon pcc-icon-save" title="' +
+((__t = ( data.saveAnnotations )) == null ? '' : __t) +
+'"></button> <button data-pcc-lock-editable-layer data-pcc-toggle="dialog-load-annotations" class="pcc-icon pcc-icon-load" title="' +
+((__t = ( data.loadAnnotations )) == null ? '' : __t) +
+'"></button> <button data-pcc-comments-panel class="pcc-icon pcc-icon-comment" title="' +
 ((__t = ( data.commentsPanel )) == null ? '' : __t) +
 '"></button> <button data-pcc-toggle="dialog-download" data-pcc-removable-id="download" class="pcc-icon pcc-icon-download" title="' +
 ((__t = ( data.download )) == null ? '' : __t) +
-'"></button> </div> <div class="pcc-left"> <button class="pcc-icon pcc-icon-list" title="' +
+'"></button> </div> </div> </div> <div class="pcc-tab" data-pcc-nav-tab="esign" data-pcc-removable-id="esignTab" role="presentation"> <button class="pcc-tab-item" role="tab" aria-controls="esign-toolbar" id="esign-tab" tabindex="-1"><span class="pcc-icon pcc-icon-esign"></span> ' +
+((__t = ( data.esignLabel )) == null ? '' : __t) +
+'</button> <div class="pcc-tab-pane pcc-tab-advanced" id="esign-toolbar" role="tabpanel"> <div class="pcc-left pcc-pull-left"> <button class="pcc-icon pcc-icon-list" title="' +
 ((__t = ( data.esignManage )) == null ? '' : __t) +
 '" data-pcc-esign="manage"></button> <button class="pcc-icon pcc-icon-freehandSign" title="' +
 ((__t = ( data.esignFreehand )) == null ? '' : __t) +
@@ -1613,7 +1609,11 @@ __p += ' <button data-pcc-mouse-tool="AccusoftRectangleRedaction" data-pcc-defau
 ((__t = ( data.esignPlaceSignature )) == null ? '' : __t) +
 '" data-pcc-mouse-tool="AccusoftPlaceSignature" data-pcc-esign="place" disabled></button> <button class="pcc-icon pcc-icon-datestamp" title="' +
 ((__t = ( data.esignPlaceDateSignature )) == null ? '' : __t) +
-'" data-pcc-mouse-tool="AccusoftPlaceDateSignature" data-pcc-esign="placeDate"></button> </div> </div> </div> <div class="pcc-status-bar"> <button data-pcc-first-page class="pcc-icon pcc-icon-firstpage" title="' +
+'" data-pcc-mouse-tool="AccusoftPlaceDateSignature" data-pcc-esign="placeDate"></button> </div> <div class="pcc-pull-right"> <button data-pcc-comments-panel class="pcc-icon pcc-icon-comment" title="' +
+((__t = ( data.commentsPanel )) == null ? '' : __t) +
+'"></button> <button data-pcc-toggle="dialog-download" data-pcc-removable-id="download" class="pcc-icon pcc-icon-download" title="' +
+((__t = ( data.download )) == null ? '' : __t) +
+'"></button> </div> </div> </div> <div class="pcc-status-bar"> <button data-pcc-first-page class="pcc-icon pcc-icon-firstpage" title="' +
 ((__t = ( data.firstPage )) == null ? '' : __t) +
 '"></button> <button data-pcc-prev-page class="pcc-icon pcc-icon-prevpage" title="' +
 ((__t = ( data.previousPage )) == null ? '' : __t) +
