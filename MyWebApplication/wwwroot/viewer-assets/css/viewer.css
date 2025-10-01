@@ -400,7 +400,7 @@ html body {
   text-align: center;
   text-indent: 0;
   background: #202124;
-  border: 1px inset #686c75;
+  border: 1px inset #81858f;
   border-radius: 2px;
   margin: 0 3px;
   color: white;
@@ -918,10 +918,11 @@ html body {
 .pccv .pcc-status-bar {
   height: 29px;
   line-height: 29px;
-  color: #aeaeae;
+  color: #d4d4d4;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   padding: 0 10px;
   border: none;
+  font-weight: bold;
 }
 .pccv .pcc-nav-tabset .pcc-tab-item {
   background: #383a3f;
@@ -1707,7 +1708,7 @@ html body {
 }
 .pccv .pcc-tools-tabset .pcc-icon.pcc-active {
   background-color: #202124 !important;
-  border-bottom: 1px solid #686c75;
+  border-bottom: 1px solid #81858f;
   border-radius: 2px;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.4);
@@ -1725,7 +1726,8 @@ html body {
   color: #555;
   padding: 0;
   list-style: none;
-  font-size: 1.2em;
+  font-size: 1.5em;
+  font-weight: bold;
   white-space: nowrap;
   height: auto;
   max-height: 0;
@@ -1757,14 +1759,21 @@ html body {
 .pccv .pcc-tools-tabset ul li:hover {
   background: #f2f3f6;
 }
-.pccv .pcc-tools-tabset ul .pcc-separator {
+.pccv .pcc-tools-tabset ul .pcc-end-group:after {
+  content: "";
+  display: block;
   background: #c2c5ce;
   height: 4px;
+  margin-top: 6px;
+  margin-bottom: -6px;
+  margin-left: -8px;
+  width: calc(100% + 16px);
 }
 .pccv .pcc-tools-tabset .pcc-icon[data-pcc-zoom-level] {
   width: 47px;
   background: #202124 !important;
   color: white;
+  font-weight: bold;
 }
 .pcc-image-tools-panel {
   line-height: 14px;
@@ -1783,6 +1792,26 @@ html body {
   box-shadow: rgba(0, 0, 0, 0.4) 2px 2px 3px 0px;
   padding-bottom: 10px;
   padding-top: 7px;
+}
+.pcc-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  z-index: 9999;
+  text-decoration: none;
+}
+.pcc-skip-link:focus {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background-color: #f2f3f6;
+  padding: 8px;
+  color: #555;
+  outline: none;
+  box-shadow: inset 0px 0px 0px 2px #3366cc;
 }
 .pccv .pcc-overlay-fade {
   display: none;
@@ -2358,28 +2387,35 @@ html body {
   border-radius: 2px;
 }
 .pccv .pcc-search-filter-container,
-.pccv .pcc-search-quick-actions-container {
+.pccv .pcc-search-quick-actions-container,
+.pccv .pcc-pii-filter-container {
   margin: 10px 0;
 }
 .pccv .pcc-search-quick-actions-container button,
-.pccv .pcc-search-quick-actions-container input {
+.pccv .pcc-pii-filter-container button,
+.pccv .pcc-search-quick-actions-container input,
+.pccv .pcc-pii-filter-container input {
   width: 100%;
   margin-bottom: 10px;
 }
-.pccv .pcc-search-quick-actions-container .pcc-select-redaction-reason {
+.pccv .pcc-search-quick-actions-container .pcc-select-redaction-reason,
+.pccv .pcc-pii-filter-container .pcc-select-redaction-reason {
   width: 100%;
   margin-bottom: 10px;
 }
-.pccv .pcc-search-quick-actions-container .pcc-select-redaction-reason .pcc-dropdown {
+.pccv .pcc-search-quick-actions-container .pcc-select-redaction-reason .pcc-dropdown,
+.pccv .pcc-pii-filter-container .pcc-select-redaction-reason .pcc-dropdown {
   overflow: visible;
   height: auto;
   max-height: none;
   top: auto;
 }
-.pccv .pcc-search-quick-actions-container .pcc-section {
+.pccv .pcc-search-quick-actions-container .pcc-section,
+.pccv .pcc-pii-filter-container .pcc-section {
   margin-bottom: 10px;
 }
-.pccv .pcc-search-quick-actions-container .pcc-section-content {
+.pccv .pcc-search-quick-actions-container .pcc-section-content,
+.pccv .pcc-pii-filter-container .pcc-section-content {
   border-bottom: 1px solid #c2c5ce;
 }
 .pccv .pcc-search-areas {
@@ -2412,6 +2448,21 @@ html body {
 .pccv .pcc-section.pcc-expand .pcc-section-title:after {
   content: '▲';
 }
+.pccv .pcc-pii-filter-select-all-container {
+  height: 0px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f2f3f6;
+  border-left: 1px solid #c2c5ce;
+  border-right: 1px solid #c2c5ce;
+  border-bottom: 1px solid #c2c5ce;
+  max-height: 15em;
+}
+.pccv .pcc-section.pcc-expand .pcc-pii-filter-select-all-container {
+  height: auto;
+  overflow: hidden;
+  padding: 5px;
+}
 .pccv .pcc-section-content {
   height: 0px;
   padding: 0;
@@ -2427,7 +2478,8 @@ html body {
   padding: 5px;
 }
 .pccv .pcc-search-filter,
-.pccv .pcc-search-quick-action {
+.pccv .pcc-search-quick-action,
+.pccv .pcc-pii-filter-action {
   position: relative;
   margin: 4px 0;
   cursor: pointer;
@@ -2448,7 +2500,8 @@ html body {
   padding: 0 3px;
 }
 .pccv .pcc-search-filter [data-pcc-checkbox],
-.pccv .pcc-search-quick-action [data-pcc-checkbox] {
+.pccv .pcc-search-quick-action [data-pcc-checkbox],
+.pccv .pcc-pii-filter-action [data-pcc-checkbox] {
   margin-right: 5px;
   float: left;
 }
@@ -2551,7 +2604,8 @@ html body {
 .pccv .pcc-search-results-container,
 .pccv .pcc-search-filter-container,
 .pccv .pcc-revision-container,
-.pccv .pcc-search-quick-actions-container {
+.pccv .pcc-search-quick-actions-container,
+.pccv .pcc-pii-filter-container {
   position: absolute;
   top: 40px;
   bottom: 5px;
@@ -2574,6 +2628,9 @@ html body {
   white-space: nowrap;
   overflow: hidden;
 }
+.pccv .pcc-nowrap-text {
+  white-space: nowrap;
+}
 .pccv .pcc-search-results-container,
 .pccv .pcc-revision-container,
 .pccv .pcc-pii-entities-container {
@@ -2583,6 +2640,10 @@ html body {
 .pccv .pcc-revision-container.pcc-loading,
 .pccv .pcc-pii-entities-container.pcc-loading {
   top: 107px;
+}
+.pccv .pcc-status-bar-ontop {
+  position: relative;
+  z-index: 1;
 }
 .pccv .pcc-row-results {
   position: absolute;
@@ -2683,10 +2744,10 @@ html body {
   .pccv .pcc-pii-detection-header {
     margin: 4px 0 0;
   }
-  .pccv [data-pcc-nav-tab=search] [data-pcc-toggle=dialog-pii-detection],
-  .pccv [data-pcc-nav-tab=search] [data-pcc-toggle=dialog-summarization],
-  .pccv [data-pcc-nav-tab=search] [data-pcc-toggle=dialog-query],
-  .pccv [data-pcc-nav-tab=search] [data-pcc-toggle=dialog-tag] {
+  .pccv #pcc-search-toolbar [data-pcc-toggle=dialog-pii-detection],
+  .pccv #pcc-search-toolbar [data-pcc-toggle=dialog-summarization],
+  .pccv #pcc-search-toolbar [data-pcc-toggle=dialog-query],
+  .pccv #pcc-search-toolbar [data-pcc-toggle=dialog-tag] {
     display: none;
   }
 }
